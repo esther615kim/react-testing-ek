@@ -8,32 +8,32 @@ export const handlers = [
                 //items
                 {
                     "name": "New York",
-                    "imagePath": "주소명",
+                    // "imagePath": "/images/america.jpeg",
                     "price": 1500
                 },
                 {
-                    "name": "Paris",
-                    "imagePath": "주소명",
+                    "name": "London",
+                    // "imagePath": "/images/england.jpeg",
                     "price": 650
                 }
             ])
         )
     }
     ),
-    // rest.get('', (req, res, ctx) => {
-    //     return res(
-    //         ctx.json([
-    //             {
-    //                 "type": "Insurance",
-    //                 "Price": 50
-    //             },
-    //             {
-    //                 "type": "Breakfast",
-    //                 "Price": 20
-    //             },
-    //         ])
-    //     )
-    // })
+    rest.get('http://localhost:3000/options', (req, res, ctx) => {
+        return res(
+            ctx.json([
+                {
+                    "type": "Insurance",
+                    "Price": 50
+                },
+                {
+                    "type": "Breakfast",
+                    "Price": 20
+                },
+            ])
+        )
+    })
 ]
 
 // handler  

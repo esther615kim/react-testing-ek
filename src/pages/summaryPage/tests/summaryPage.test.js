@@ -9,7 +9,9 @@ test("Should thorw an error when the checkbox is not ticked", () => {
     })
     expect(checkbox.checked).toEqual(false); //matcher
 
-    const confirmButton = screen.getByRole("button", { name: "Confirm Order" });
+    const confirmButton = screen.getByRole("button", {
+        name: "Confirm Order"
+    });
     expect(confirmButton.disabled).toBeTruthy(); //matcher
 })
 

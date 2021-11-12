@@ -6,8 +6,3 @@ import { handlers } from './handlers';
 export const server = setupServer(...handlers); // 여기 오류 뿜 TypeError: (0 , _msw.setupServer) is not a function
 
 
-beforeAll(() => server.listen());
-
-afterEach(() => server.resetHandlers());
-
-afterAll(() => server.close());

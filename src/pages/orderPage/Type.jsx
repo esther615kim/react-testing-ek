@@ -10,6 +10,7 @@ function Type({ orderType }) {
     loadItems(orderType);
   }, [orderType]);
 
+  // 아이템 로딩 함수
   const loadItems = async (orderType) => {
     try {
       let response = await axios.get(`http://localhost:5000/${orderType}`);

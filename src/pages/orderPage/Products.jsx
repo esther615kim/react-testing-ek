@@ -1,6 +1,6 @@
 import React from "react";
 
-function Products({ name, imagePath, updateItemCount }) {
+function Products({ name, imagePath}) { // type.jsx 에서 내려주는 props
   //updateItemCount?
   const handleChange = (event) => {
     const currentValue = event.target.value;

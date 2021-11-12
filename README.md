@@ -9,7 +9,7 @@ assignment due: every monday afternoon!
 | WK | Content | Status | 
 | :--: | :-----------------: | :------------: |
 |  Prep | Increment Counter  | update-completed |  
-|  WK1 | Order page | update-in-progress 🍨 |  
-|  WK2 | Summary page | to-be-updated  |  
+|  WK1 | Order page | error fixed & update-completed |   
+|  WK2 | Summary page | update-in-progress 🍨  |  
 |  WK3 | Order-complete page | to-be-updated | 
 

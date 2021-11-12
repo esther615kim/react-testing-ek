@@ -19,8 +19,7 @@ font-size:12px;`
 
 function Counter() {
     return (
-    const [count, setCounter] = useState(0);
-
+    const [count, setCounter] = useState(0)
     <div>
         <header className="App-header">
             <P>react-testing-exercise #1</P>

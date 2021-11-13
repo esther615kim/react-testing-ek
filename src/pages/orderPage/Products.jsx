@@ -19,7 +19,7 @@ function Products({ name, imagePath}) { // type.jsx 에서 내려주는 props
           id={name}
           style={{ marginLeft: 7 }}
           type="number"
-          name="quantity"
+          name="orderQuantity"
           min="0"
           defaultValue={0}
           onChange={handleChange}

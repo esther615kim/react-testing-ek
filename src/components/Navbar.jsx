@@ -1,14 +1,16 @@
 import React from 'react'
-import {AppBar,Toolbar} from "@mui/material";
-// import {AccountCircle} from "@mui/icons-material";
-
+import {AppBar,Toolbar,IconButton} from "@mui/material";
+import {ShoppingCart} from "@mui/icons-material";
+import './styled.css'
 function Navbar() {
     return (
         <div>
-            <AppBar>
-                <Toolbar>
-                    {/* <IconButton>
-                    </IconButton> */}
+            <AppBar position="sticky">
+                <Toolbar  className="toolbar" >
+                    <div className="logo">mytrip</div>
+                    <IconButton>
+                        <ShoppingCart fontSize="large"/>
+                    </IconButton>
                 </Toolbar>
             </AppBar>
         </div>

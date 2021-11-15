@@ -1,59 +1,25 @@
 import React from 'react';
 import Type from "./Type";
+import "./styled.css"
+import { Typography,Button } from '@mui/material';
+
 export default function OrderPage() {
     return (
         <div>
-            <h1>Travel Products</h1> 
-            {/* prettier 안먹힘? */}
-      <div>
+          {/* text-align left 적용ㅜ*/}
+        <div className="wrapper"> 
+        <Typography pt={2} variant="h5" >Countries</Typography>
         <Type orderType="products" />
-      </div>
-
-      <div style={{ display: "flex", marginTop: 20 }}>
-        <div style={{ width: "50%" }}>
+        </div>
+        <div className="wrapper">
+        <Typography pt={2} variant="h5">Options</Typography>
           <Type orderType="options" />
         </div>
-
-        <div>
-          <h2>Total Price</h2>
-          <br />
-          <button>Order now</button>
+        <div className="wrapper"> 
+          <Typography pt={2} variant="h5">Total Price</Typography>
+          <Button mt={2} variant="contained" className="order-button" sx={{backgroundColor:"#eb345b"}}>Order now</Button>
         </div>
-
       </div> 
 
-        </div>
     )
 }
-
-
-
-
-// import React, { useContext } from "react";
-
-// import Type from "./Type";
-
-// function OrderPage({ setStep }) {
-
-
-//   return (
-//     <div>
-//       <h1>Travel Products</h1>
-//       <div>
-//         <Type orderType="products" />
-//       </div>
-//       <div style={{ display: "flex", marginTop: 20 }}>
-//         <div style={{ width: "50%" }}>
-//           <Type orderType="options" />
-//         </div>
-//         <div>
-//           <h2>Total Price: {orderDatas.totals.total}</h2>
-//           <br />
-//           <button onClick={() => setStep(1)}>주문하기</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default OrderPage;

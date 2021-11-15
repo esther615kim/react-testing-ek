@@ -1,0 +1,25 @@
+/* *{
+    display:flex;
+} */
+.error-banner{
+    padding:20px;
+    background-color:#eee;
+    color:#eb345b;
+    max-width: 200px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.logo {
+    color:#eb345b;
+    font-size:24px;
+    font-weight:800;
+}
+
+.toolbar {
+    display: flex;
+    padding:5px 50px;
+    justify-content: space-between;
+    background:#8cd4e6;
+    color:#fff;
+}

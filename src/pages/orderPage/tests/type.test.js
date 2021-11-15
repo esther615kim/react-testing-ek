@@ -38,3 +38,5 @@ test("Should fetch option data from the server when requested", async () => {
     expect(optionCheckBoxes).toHaveLength(2); // 옵션data 2개만 있음
 
 })
+
+

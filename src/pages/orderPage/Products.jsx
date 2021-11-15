@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Paper} from "@mui/material";
 function Products({ name, imagePath}) { // type.jsx 에서 내려주는 props
   //updateItemCount?
   const handleChange = (event) => {
@@ -8,8 +8,8 @@ function Products({ name, imagePath}) { // type.jsx 에서 내려주는 props
   };
   return (
     <div>
-      <img
-        style={{ width: "75%" }}
+      <Paper  sx={{m:2,p:2}}>
+      <img style={{objectFit:"fill",width:300}}
         src={`http://localhost:5000/${imagePath}`}
         alt={`${name} product`}
       />
@@ -25,6 +25,7 @@ function Products({ name, imagePath}) { // type.jsx 에서 내려주는 props
           onChange={handleChange}
         />
       </form>
+      </Paper>
     </div>
   );
 }

@@ -1,8 +1,15 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState} from "react";
 import axios from "axios";
+import {Paper, Box} from "@mui/material";
 import Products from "./Products";
-import ErrorBanner from './../../components/errorBanner';
 import Options from './Options';
+import ErrorBanner from './../../components/ErrorBanner';
+// import { styled } from 'styled-components';
+
+
+// const StyledGrid = styled(Grid)({
+
+// })
 
 function Type({ orderType }) {
   const [items, setItems] = useState([]);
@@ -27,23 +34,29 @@ function Type({ orderType }) {
     return <ErrorBanner message="An error has occurred." />;
   }
   // itemcomponents는 orderType 따라 정해짐
-  const ItemComponents = orderType === "products" ? Products : Options; 
+  const ItemComponents = (orderType === "products") ? Products : Options; 
    // item 카드 => props가 Products나 Options로 감
-  const optionItems = items.map((item) => {
+ const optionItems = items.map((item) => {
     return (
-      <ItemComponents
-        key={item.name}
-        name={item.name}
-        imagePath={item.imagePath}
-      />
-    );
+
+      <div style={{display:"flex"}}>
+        <Paper >
+      <ItemComponents 
+    key={item.name}
+    name={item.name}
+    imagePath={item.imagePath}
+  />
+  </Paper></div>
+
+
+    )
   });
 
   return (
-    <div>
-      <h3>{optionItems}</h3>
-    </div>
+      <div>{optionItems}</div>
   );
 }
 
 export default Type;
+
+

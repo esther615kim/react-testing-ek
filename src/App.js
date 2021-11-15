@@ -1,9 +1,12 @@
 import React from 'react';
+import OrderPage from './pages/orderPage/OrderPage';
+import Navbar from './components/Navbar';
 function App() {
 
   return (
     <div className="App">
-      <h3>trip-app</h3>
+      <Navbar />
+      <OrderPage />
     </div>
   );
 }

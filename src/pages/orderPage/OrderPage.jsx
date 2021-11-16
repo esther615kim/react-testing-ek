@@ -11,7 +11,7 @@ export default function OrderPage() {
         <Typography pt={2} variant="h5" >Countries</Typography>
         <Type orderType="products" />
         </div>
-        <div className="wrapper">
+        <div className="wrapper option">
         <Typography pt={2} variant="h5">Options</Typography>
           <Type orderType="options" />
         </div>

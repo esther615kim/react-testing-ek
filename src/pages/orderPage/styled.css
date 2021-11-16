@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&family=Poppins:ital,wght@1,400;1,600&family=Ruda&family=Signika:wght@400;600&display=swap');
 .wrapper {
     display:flex;
     flex-direction: column;
+    font-family: 'Poppins', sans-serif;
     padding-left:60px;
     /* 패딩L=> 모바일 화면에서 없애기 */
 }
@@ -30,9 +32,8 @@
 
 .product-card form {
     display:flex;
-    padding:0 20px;
+    padding:5px;
     justify-content:space-between;
-    padding-top:5px;
     text-align:center;
     align-items: center;
 }
@@ -47,10 +48,21 @@
     padding:10px 0;
 }
 
+.option-form {
+    padding-top:5px;
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    text-align:left;
+    justify-content: center;
+    flex-wrap:wrap;
+
+}
+
 .order-button {
     width:300px;
-   padding:15px 20px;
-   margin:10px 0;
+    padding:15px 20px;
+    margin:10px 0;
     border-radius: 5px;
     border:none;
     font-size:20px

@@ -2,7 +2,8 @@ import React from 'react'
 
 function Options({ name, updateItemCount }) {
   return (
-    <form>
+    <form className="option-form">
+      <div>
       <input
         type="checkbox"
         id={`${name} option`}
@@ -11,6 +12,7 @@ function Options({ name, updateItemCount }) {
         }}
       />{" "}
       <label htmlFor={`${name} option`}>{name}</label>
+      </div>
     </form>
   );
 }

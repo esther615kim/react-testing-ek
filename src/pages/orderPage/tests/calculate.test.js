@@ -8,7 +8,7 @@ test("The initial total should be 0(string) when the cart is empty", async () =>
     // empty products cart === 0 test
     render(<Type orderType="products" />);
 
-    const productsTotal = screen.getByText("Total of products",
+    const productsTotal = screen.getByText("Total of products", // getByText doesn't need await func
         { exact: false } //여기 주의
     );
     expect(productsTotal).toHaveTextContent("0"); // string

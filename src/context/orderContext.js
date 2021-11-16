@@ -1,13 +1,47 @@
-import { createContext, useMemo, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 
 const OrderContext = createContext();
+
+const PRICES = {
+    products: 1000,
+    options: 500,
+};
+
+//product qty * price
+function calculateSum(orderType, orderCounts) {
+    let quantity = 0;
+    for (const count of orderCounts[orderType].values()) { // !!
+        quantity += count;
+    }
+
+    return quantity * PRICES[orderType];
+}
+
+
 
 // update/display order total
 export function OrderContextProvider(props) {
     const [orderCounts, setOrderCounts] = useState({
         products: new Map(),
-        options: new Map(),
+        options: new Map(), // Map() func
     });
+
+    const [totals, setTotals] = useState({
+        products: 0,
+        options: 0,
+        total: 0,
+    });
+    // ordercounts 업뎃
+    useEffect(() => {
+        const productsTotal = calculateSum("products", orderCounts);
+        const optionsTotal = calculateSum("options", orderCounts);
+        const grandTotal = productsTotal + optionsTotal;
+        setTotals({
+            products: productsTotal,
+            options: optionsTotal,
+            grandTotal,
+        });
+    }, [orderCounts]);
 
     // value 에 넣을 data
     const value = useMemo(() => {
@@ -21,8 +55,8 @@ export function OrderContextProvider(props) {
             setOrderCounts(newOrderCounts);
         }
 
-        return [{ ...orderCounts }, updateItemCount] //?!
-    }, orderCounts) // orderCounts 감시
+        return [{ ...orderCounts, totals }, updateItemCount] // display/update 해줄 애들
+    }, [orderCounts, totals]) // orderCounts 감시 => updated
 
     return <OrderContextProvider value={value} {...props} /> // 얜모닝{...props} !!
 

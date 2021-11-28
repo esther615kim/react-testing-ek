@@ -42,14 +42,16 @@ function Type({ orderType }) {
     />
   ));
 
-  let orderTypeKorean = orderType === "products" ? "상품" : "옵션";
+  const orderType = orderType === "products" ? "product" : "option"; // 타입에 따른 text 넣어주기
   return (
     // order summary 리턴함
     <>
       <h2>주문 종류</h2>
       <p>하나의 가격</p>
       <p>
-        {orderTypeKorean}Total of products{orderData.totals[orderType]}
+        Total price for {orderType}
+        {orderData.totals[orderType]}
+        {/* ordersData.totals 는 상품 + 옵션 */}
       </p>
       <div
         style={{

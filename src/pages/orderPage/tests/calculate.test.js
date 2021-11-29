@@ -5,7 +5,7 @@ import { server } from '../../../mocks/server';
 import Type from '../Type';
 import { rest } from 'msw';
 import { OrderContextProvider } from '../../../context/orderContext';
-import OrderPage from './../OrderPage';
+import OrderPage from '../OrderPage';
 
 // test the product total => initially total is 0 and when a single Amercian product is added, the total will become "1000"
 test("The initial total should be 0(string) when the cart is empty", async () => {

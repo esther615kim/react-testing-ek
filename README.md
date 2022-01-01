@@ -1,5 +1,8 @@
 ## react-testing-library group study & Additional projects 📲
 
+### ScreenShot
+![](https://images.velog.io/images/ek615/post/1f4a1041-7b41-44af-a86b-5e6a59bd5e1b/image.png)
+
 ### Goals
 - To test React Components with Jest
 - To complete the react-testing-assignment for 3-week React TDD study
@@ -10,16 +13,15 @@
 | :--: | :-----------------: | :------------: |
 |  Prep | Increment Counter  | update-completed |  
 |  WK1 | Order page | error fixed & update-completed |   
-|  WK2 | Summary page | to-be-updated |  
-|  WK3 | Order-complete page | to-be-updated | 
+|  WK2 | Summary page | update-completed|  
+|  WK3 | Order-complete page | update-completed | 
 
 | WK | Content | Status | 
 | :--: | :-----------------: | :------------: |
 |  #1 | login page |update-in-progress 🍨  |  
 |  #2 | gallery page | |   
 
-### ScreenShot
-![](https://images.velog.io/images/ek615/post/1f4a1041-7b41-44af-a86b-5e6a59bd5e1b/image.png)
+
 
 ### ChangeLog
 

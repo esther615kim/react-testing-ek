@@ -39,3 +39,4 @@ describe("order test", () => {
 })
 // step 2 order confirmation test
 // step 3 order complection test
+// context- 초기화 유의하기 //페이지 넘김

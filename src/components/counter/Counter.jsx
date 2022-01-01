@@ -18,21 +18,21 @@ color:#ccc;
 font-size:12px;`
 
 function Counter() {
-    return (
     const [count, setCounter] = useState(0)
+    return (
     <div>
         <header className="App-header">
             <P>react-testing-exercise #1</P>
             <h4>Increment Counter🎅</h4>
             <div>
-                {/* 테스트1 */}
+                {/* test1 */}
                 <div data-testid="counter">{count}</div>
                 <div>
-                    {/* 테스트2,3 */}
+                    {/* test2,3 */}
                     <Button onClick={() => { setCounter((count) => count + 1) }}
                         data-testid="plus-button">+</Button>
                     <Button onClick={() => {
-                        if (!count) return;// 다른 방법은?
+                        if (!count) return;
                         setCounter((count) => count - 1)
                     }}
                         data-testid="minus-button">-</Button>

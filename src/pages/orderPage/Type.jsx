@@ -26,7 +26,7 @@ function Type({ orderType }) {
   };
 
   if (error) {
-    return <ErrorBanner message="에러가 발생했습니다." />;
+    return <ErrorBanner message="An error has occurred." />;
   }
   // itemcomponents는 orderType 따라 정해짐
   const ItemComponents = orderType === "products" ? Products : Options;
@@ -42,21 +42,21 @@ function Type({ orderType }) {
     />
   ));
 
-  const orderType = orderType === "products" ? "product" : "option"; // 타입에 따른 text 넣어주기
+  const _orderType = orderType === "products" ? "product" : "option"; // 타입에 따른 text 넣어주기
   return (
     // order summary 리턴함
     <>
       <h2>주문 종류</h2>
       <p>하나의 가격</p>
       <p>
-        Total price for {orderType}
-        {orderData.totals[orderType]}
+        Total price for {_orderType}
+        {orderData.totals[_orderType]}
         {/* ordersData.totals 는 상품 + 옵션 */}
       </p>
       <div
         style={{
           display: "flex",
-          flexDirection: orderType === "options" && "column",
+          flexDirection: _orderType === "options" && "column",
         }}
       >
         {optionItems}

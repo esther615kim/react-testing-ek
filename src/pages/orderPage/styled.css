@@ -3,7 +3,9 @@
     display:flex;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
-    padding-left:60px;
+    padding:2rem;
+    text-align: center;
+    align-items: center;
     /* 패딩L=> 모바일 화면에서 없애기 */
 }
 .order-container {

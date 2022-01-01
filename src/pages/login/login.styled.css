@@ -1,0 +1,25 @@
+.login-box{
+    margin:2rem;
+    padding:5px;
+    max-height:650px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+}
+
+.login-image{
+    width:45%;
+    flex:1;
+    border-radius: 5px;
+    max-height:500px;
+}
+.form-box{
+    padding:5px 10px;
+    width:45%;
+    flex:1;
+    /* border:1px solid blue; */
+    flex-direction:column;
+
+}

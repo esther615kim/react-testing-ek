@@ -6,7 +6,7 @@
 ### Goals
 - To test React Components with Jest
 - To complete the react-testing-assignment for 3-week React TDD study
-- To add additional individual solo projects to skill up TDD with React
+- To add additional projects to practice TDD with React
 ### 📗 Updates
 
 | WK | Content | Status | 

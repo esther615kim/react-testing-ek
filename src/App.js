@@ -4,8 +4,8 @@ import { OrderContextProvider } from "./context/orderContext";
 
 import OrderPage from "./pages/orderPage/OrderPage";
 import Navbar from "./components/Navbar";
-import Login from './pages/login/index';
 import Counter from './components/counter/Counter';
+import Login from './pages/Login/index';
 
 function App() {
   return (

@@ -1,12 +1,12 @@
 import { render, screen, server, userEvent } from '../../../mocks/server';
 import App from './App';
 import { rest } from 'msw';
-import { userEvent } from '@testing-library/user-event';
+// import { userEvent } from '@testing-library/user-event';
 
 // step 1 order-flow test
 describe("order test", () => {
 
-    test("order flow test #1, product only", async () => {
+    test.skip("order flow test #1, product only", async () => {
         render(<App />)
         const input = await screen.findByRole("spinbutton", {
             name: "America",
@@ -22,7 +22,7 @@ describe("order test", () => {
         }))
     })
 
-    test("order flow test #2, product not added", async () => {
+    test.skip("order flow test #2, product not added", async () => {
         const input = await screen.findByRole("spinbutton", {
             name: "America",
         })

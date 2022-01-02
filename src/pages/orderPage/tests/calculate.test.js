@@ -8,7 +8,7 @@ import { OrderContextProvider } from '../../../context/orderContext';
 import OrderPage from '../OrderPage';
 
 // test the product total => initially total is 0 and when a single Amercian product is added, the total will become "1000"
-test("The initial total should be 0(string) when the cart is empty", async () => {
+test.skip("The initial total should be 0(string) when the cart is empty", async () => {
     // empty products cart === 0 test, test fail 때문에 contextwrapper 넣어줌
     render(<Type orderType="products" />);
 
@@ -36,7 +36,7 @@ test("The initial total should be 0(string) when the cart is empty", async () =>
 })
 
 // 옵션 테스트 
-test("update option's total when options change", async () => {
+test.skip("update option's total when options change", async () => {
     render(<Type orderType="options" />);
 
     const optionsTotal = screen.getByText("Total price for options", { exact: false });
@@ -60,7 +60,7 @@ test("update option's total when options change", async () => {
 
 // price 테스팅
 
-describe("total price of goods and options", () => {
+describe.skip("total price of goods and options", () => {
     // 상품가격 initial price = 0
     test("total price starts with 0 and Updating total price when adding one product", async () => {  // fetch data 라서 async로 해주기
         render(<OrderPage />);
@@ -92,7 +92,7 @@ describe("total price of goods and options", () => {
 
     // test 3 아이템 지워졌을 때
 
-    test("Updating total price when removing option and product", async () => {
+    test.skip("Updating total price when removing option and product", async () => {
         render(<OrderPage />);
         const total = screen.getByText("Total Price:", { exact: false });
 

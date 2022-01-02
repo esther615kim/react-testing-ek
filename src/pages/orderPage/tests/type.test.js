@@ -4,7 +4,7 @@ import Type from '../Type';
 import { rest } from 'msw';
 
 //test1 get img
-test("Should display the corresponding images when requested", async () => {
+test.skip("Should display the corresponding images when requested", async () => {
     render(<Type orderType="products" />);
     // test images, asynchronouos
     const productImages = await screen.findAllByRole('img',

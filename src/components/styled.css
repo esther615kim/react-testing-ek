@@ -18,7 +18,7 @@
 
 .toolbar {
     display: flex;
-    padding:5px 50px;
+    padding:3px 50px;
     justify-content: space-between;
     background:#8cd4e6;
     color:#fff;

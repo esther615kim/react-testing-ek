@@ -69,3 +69,28 @@
     border:none;
     font-size:20px
 }
+
+.product-img{
+    width:100px;
+    height:120px;
+    object-fit:cover;
+}
+
+.product-description{
+    display:-webkit-box;
+    -webkit-line-clamp:3; /* 라인수 */
+    -webkit-box-orient:vertical;
+    white-space:normal;
+    color:#212121;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

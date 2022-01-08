@@ -1,0 +1,6 @@
+{
+    "extend":"./tsconfig.json",
+    "complilerOptions":{
+        "jsx":"react-jsx"
+    }
+}

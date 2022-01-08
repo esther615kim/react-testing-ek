@@ -1,40 +1,29 @@
 import React, { useState } from 'react';
-import { StyledBox,StyledDiv, StyledCard,StyledButton } from './basket.styled';
+import { StyledDiv, StyledCard,StyledButton } from './basket.styled';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import {Divider, Typography } from '@mui/material';
-import Product from './Product';
+import ProductList from './Product';
 
-
-
-const ITEMS  = [
-  {
-    storename: 'Bob Burger',
-    category: ["Burger"],
-    items: [
-      {
-        item: 'Angus burger',
-        qty: 1,
-        price: 7.5,
-        sizes:'medium',
-      },
-      {
-        item: 'fries',
-        price: 1,
-        qty: 1,
-        category: 1,
-        size:'medium',
-      },
-    ],
-  },
-];
+import { useGetAllProductListQuery } from '../../redux/features/productApi';
+import { useEffect } from 'react';
 
 const Basket2 = () => {
   // item => redux
-  const [items, setItems] = useState(ITEMS)
+  const {data,error,isLoading} = useGetAllProductListQuery();
+  const [items, setItems] = useState([]);
+
+  // useEffect(()=>{
+  //   setItems(prev=>[prev,...data])
+  //   console.log("fetched data",items)
+  // },[items]);
+
   return (
     <StyledDiv>
-      {/* products */}
-      <Product/>
+      {isLoading? <p>Loading...</p>:
+      error? <p>An error has occurred..</p>:
+      <ProductList data={data} />
+      }
+
       {/* cart */}
       <StyledCard>
           <ShoppingBasketIcon sx={{fontSize:"2.5rem"}}/>

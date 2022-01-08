@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+// import {toast} from "react-toastify";
 
 const initialState = {
   cartItems: [],
@@ -26,12 +27,12 @@ const cartSlice = createSlice({
       state.cartTotalQty++;
       state.cartTotalAmt = state.cartTotalAmt +selectedProduct.price;
       console.log("subtotal",state.cartTotalAmt,state.cartTotalQty);
-    
+      // toast.success("Item is added to the cart", {position:"bottom-left"})
     },
   },
 });
 
-export const { addToCart } = cartSlice.actions; // individual reducers
+export const { addToCart } = cartSlice.actions; // individual reducer
 
 export default cartSlice.reducer;
 

@@ -24,6 +24,11 @@
 
 
 ### ChangeLog
+[0.0.4]
+-installed : --save react-toastify
+-`changed`
+- cartSlicer.js to add total amount and qty in addToCart slicer.
+-
 
 [0.0.3]
 2021.12.31
@@ -49,3 +54,7 @@
 ### What I've Learned
 - React-Router-dom v6 changes from v5
 https://reactrouter.com/docs/en/v6/upgrading/v5
+
+
+### References
+React-Toastify https://fkhadra.github.io/react-toastify/introduction

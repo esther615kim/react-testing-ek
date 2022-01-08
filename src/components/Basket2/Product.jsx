@@ -1,9 +1,11 @@
 import React from "react";
-import "../styled.css"
+import "../styled.css";
+
 import { StyledBox,StyledStack,StyledPaper } from "./basket.styled";
 import { IconButton, Typography } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'; 
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 // 컴포넌트명에 Icon이 들어 있는게 better readability
 import {addToCart} from '../../redux/features/cartSlicer';
 // import {addToCart} from '../redux/features/cartSlicer'

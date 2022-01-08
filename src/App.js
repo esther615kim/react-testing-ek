@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { OrderContextProvider } from "./context/orderContext";
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css'; // for toast msgs
 
 import OrderPage from "./pages/orderPage/OrderPage";
 import Navbar from "./components/Navbar";
@@ -11,6 +13,7 @@ import Basket2 from './components/Basket2/index';
 function App() {
   return (
     <BrowserRouter>
+    {/* <ToastContainer> */}
     <div className="App">
         <Navbar />
         <Routes>
@@ -25,6 +28,7 @@ function App() {
     </Routes>
         {/* <h3>React-testing world 👩‍🏫</h3> */}
     </div>
+    {/* </ToastContainer> */}
     </BrowserRouter>
   );
 }

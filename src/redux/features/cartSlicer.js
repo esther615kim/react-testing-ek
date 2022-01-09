@@ -2,7 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 // import {toast} from "react-toastify";
 
 const initialState = {
-  cartItems: [],
+  cartItems: [{
+    id:0,
+    title:"Hungry cheese burger",
+    price:6.2,
+    qty:1,
+  }],
+  // cartItems:localStorage.getItem("mycart")? JSON.parse(localStorage.getItem("mycart")):[],
   cartTotalQty: 0,
   cartTotalAmt: 0,
 };
@@ -25,9 +31,11 @@ const cartSlice = createSlice({
         state.cartItems[itemIndex].qty ++;
       }
       state.cartTotalQty++;
-      state.cartTotalAmt = state.cartTotalAmt +selectedProduct.price;
+      state.cartTotalAmt = state.cartTotalAmt + selectedProduct.price; //toFixed(2);
+      
       console.log("subtotal",state.cartTotalAmt,state.cartTotalQty);
-      // toast.success("Item is added to the cart", {position:"bottom-left"})
+      // toast.success(`${action.payload.name} is added`, {position:"bottom-left"})
+      // localStorage.setItem("mycart",JSON.stringify(state.cartItems));
     },
   },
 });

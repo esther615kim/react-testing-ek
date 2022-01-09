@@ -19,28 +19,35 @@ const cartSlice = createSlice({
   reducers: {
     // add item to cart
     addToCart(state, action) {
-      const selectedProduct = {...action.payload, qty:1};
+      const selectedItem = {...action.payload, qty:1};
       const itemIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
       );
     
       if(itemIndex<0){
-    // new to cart
-        state.cartItems.push(selectedProduct);
+        state.cartItems.push(selectedItem);
       }else{
         state.cartItems[itemIndex].qty ++;
       }
       state.cartTotalQty++;
-      state.cartTotalAmt = state.cartTotalAmt + selectedProduct.price; //toFixed(2);
+      state.cartTotalAmt = state.cartTotalAmt + selectedItem.price; //toFixed(2);
       
       console.log("subtotal",state.cartTotalAmt,state.cartTotalQty);
       // toast.success(`${action.payload.name} is added`, {position:"bottom-left"})
       // localStorage.setItem("mycart",JSON.stringify(state.cartItems));
     },
+    // remove item from cart
+    removeFromCart(state,action){
+      const newCartItems = state.cartItems.filter(
+        (item) => item.id !== action.payload.id
+      );
+
+      state.cartItems = newCartItems;
+    }
   },
 });
 
-export const { addToCart } = cartSlice.actions; // individual reducer
+export const { addToCart,removeFromCart } = cartSlice.actions; // individual reducer
 
 export default cartSlice.reducer;
 

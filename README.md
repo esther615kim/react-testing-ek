@@ -14,12 +14,12 @@
 |  Prep | Increment Counter  | update-completed |  
 |  WK1 | Order page | error fixed & update-completed |   
 |  WK2 | Summary page | update-completed|  
-|  WK3 | Order-complete page | update-completed | 
+|  WK3 | Order-complete page |  | 
 
 | WK | Content | Status | 
 | :--: | :-----------------: | :------------: |
-|  #1 | login page |update-in-progress 🍨  |  
-|  #2 | gallery page | |   
+|  #1 | login page | update-completed |  
+|  #2 | cart component | update-in-progress 🍨|   
 
 
 

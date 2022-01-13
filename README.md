@@ -24,6 +24,21 @@
 
 
 ### ChangeLog
+
+[0.0.5]
+2022.01.14
+
+`changed`
+- Basket.js to add increment/decrement functions
+- carSlicer to fix decrementItemQty reducer
+
+`Error`
+- when the item qty hits 0 it throws the following error:
+```js
+cartSlicer.js:51 Uncaught TypeError: Cannot read properties of undefined (reading 'qty')
+    at removeFromCart (cartSlicer.js:51:1)
+```
+
 [0.0.4]
 -installed : --save react-toastify
 -`changed`

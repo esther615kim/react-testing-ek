@@ -8,7 +8,7 @@ import OrderPage from "./pages/orderPage/OrderPage";
 import Navbar from "./components/Navbar";
 import Counter from './components/counter/Counter';
 import Login from './pages/login/index';
-import Basket2 from './components/Basket2/index';
+import Basket from './components/Basket/index';
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
         <OrderPage />
       </OrderContextProvider>
       }} />
-            <Route path="/cart" element={<Basket2/>} />
+            <Route path="/cart" element={<Basket/>} />
     </Routes>
         {/* <h3>React-testing world 👩‍🏫</h3> */}
     </div>

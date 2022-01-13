@@ -60,6 +60,10 @@ export const StyledItemBox = styled(Box)({
   justifyContent:"space-between",
   alignItems: "center",
   padding: "2.5px 10px 2.5px 4px",
+  '& > span':{
+    fontSize:"14px",
+    fontWeight:500
+  }
 });
 
 export const StyledAddIcon = styled(AddCircleOutlineIcon)({
@@ -70,6 +74,7 @@ export const StyledAddIcon = styled(AddCircleOutlineIcon)({
 export const StyledRemoveIcon = styled(RemoveCircleOutlineIcon)({
   fontSize: "12px",
   padding: "0 10px 0 4px",
+  // transition: '.1s ease-in',
 });
 
 export const StyledSubtotalBox = styled(Box)({
@@ -80,5 +85,28 @@ export const StyledSubtotalBox = styled(Box)({
 export const StyledDeleteItemIcon = styled(DeleteForeverIcon)({
   fontSize: "12px",
   paddingLeft:"6px",
+  
 });
 
+export const StyledPrdoctQtyBox= styled(Box)({
+  flexDirection:"row",
+  justifyContent:"center",
+  alignItems:"center",
+  minWidth:"120px",
+  fontSize:"14px",
+  '&:hover': {
+    fontWeight:600
+   }, // not working
+
+
+  // '& > div': {
+  //   width:"52px",
+  //   border:"1px solid #bbb",
+  //   textAlign:"center",
+  //   borderRadius:"3px;",
+  //   paddingLeft:"5px"
+  // }
+});
+
+
+// '& button': {

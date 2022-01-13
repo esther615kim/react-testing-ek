@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector,useDispatch} from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   StyledDiv,
   StyledCard,
@@ -16,23 +16,37 @@ import {
   Divider,
   Typography,
   Switch,
-IconButton,
+  IconButton,
   FormControlLabel,
 } from "@mui/material";
 import ProductList from "./Product";
-import {removeFromCart } from '../../redux/features/cartSlicer';
+import {
+  removeFromCart,
+  decrementItemQty,
+  addToCart,
+} from "../../redux/features/cartSlicer";
 import { useGetAllProductListQuery } from "../../redux/features/productApi";
-import { useEffect } from "react";
 
-const Basket2 = () => {
+const Basket = () => {
   // item => redux
   const { data, error, isLoading } = useGetAllProductListQuery();
-  const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
 
-  const handleRemoveFromCart = (item) =>{
+  const handleRemoveFromCart = (item) => {
     dispatch(removeFromCart(item));
   };
+
+  const handleDecrementCount = (item) => {
+    dispatch(decrementItemQty(item));
+  };
+  const handleIncrementCount = (item) => {
+    dispatch(addToCart(item));
+  };
+
+  useEffect(() => {
+    // get cart when it's updated
+  }, [cart]);
 
   return (
     <StyledDiv>
@@ -58,19 +72,32 @@ const Basket2 = () => {
               {/* cart items */}
               {cart.cartItems?.map((cartItem) => (
                 <StyledItemBox key={cartItem.id}>
-                  <h5>{cartItem.title}
-                  <IconButton onClick={()=>handleRemoveFromCart(cartItem)}>
-                    <StyledDeleteItemIcon />
-                  </IconButton>
+                  <h5>
+                    {cartItem.title}
+                    <IconButton
+                      onClick={() => {
+                        console.log("1 more!");
+                        handleRemoveFromCart(cartItem);
+                      }}
+                    >
+                      <StyledDeleteItemIcon />
+                    </IconButton>
                   </h5>
-                  <div className="itemPriceAndQty">
-                    <h5>
-                      <StyledAddIcon color="primary" />
-                      {cartItem.qty}
-                      <StyledRemoveIcon color="warning" />
-                      <span>£ {cartItem.price * cartItem.qty}</span>
-                    </h5>
-                  </div>
+                  <StyledAddIcon
+                    color="primary"
+                    onClick={() => {
+                      handleIncrementCount(cartItem);
+                    }}
+                  />
+                  {cartItem.qty}
+                  <StyledRemoveIcon
+                    color="warning"
+                    onClick={() => {
+                      handleDecrementCount(cartItem);
+                    }}
+                  />
+
+                  <span>£ {cartItem.price * cartItem.qty}</span>
                 </StyledItemBox>
               ))}
               <Divider />
@@ -86,7 +113,7 @@ const Basket2 = () => {
               <Divider />
               <StyledSubtotalBox>
                 <h3>Subtotal</h3>
-                <h5>£ {cart.cartTotalAmt}</h5>
+                <h5>£ {cart.cartTotalAmt.toFixed(2)}</h5>
               </StyledSubtotalBox>
             </StyledBasketBox>
           </>
@@ -97,4 +124,4 @@ const Basket2 = () => {
   );
 };
 
-export default Basket2;
+export default Basket;

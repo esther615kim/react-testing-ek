@@ -7,8 +7,10 @@ const initialState = {
       id: 17,
       shopName: "Bob's burgers",
       shopDescription: 'comfort food',
+      liked:false
     },
   ],
+
 };
 
 const FavListSlicer = createSlice({
@@ -20,8 +22,10 @@ const FavListSlicer = createSlice({
       const selectedShop = {
         ...action.payload,
       };
+      // selectedShop에 liked 추가하기 (default = false)
       const itemIndex = state.favList.findIndex((item) => item.id === action.payload.id);
       if (itemIndex < 0) {
+
         state.favList.push(selectedShop);
       }
       console.log('updated favList', state.favList);

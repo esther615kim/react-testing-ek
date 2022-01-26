@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   StyledDiv,
@@ -46,7 +46,7 @@ const Basket = () => {
 
   useEffect(() => {
     // get cart when it's updated
-  }, [cart]);
+  }, [cart]); 
 
   return (
     <StyledDiv>
@@ -76,7 +76,6 @@ const Basket = () => {
                     {cartItem.title}
                     <IconButton
                       onClick={() => {
-                        console.log("1 more!");
                         handleRemoveFromCart(cartItem);
                       }}
                     >

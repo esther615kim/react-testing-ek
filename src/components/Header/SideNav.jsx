@@ -7,8 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-import { PATH_USER_SIGNIN, PATH_HISTORY } from '../../../constants/PathConstants';
-import { StyledSideNavContainer, StyledSideNavHeader, StyledSideNavMain, StyledButton } from './sideNav.styled';
+import { StyledSideNavContainer, StyledSideNavHeader, StyledSideNavMain, StyledButton } from './header.styled';
 // import { useDispatch, useSelector } from 'react-redux';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
@@ -35,11 +34,11 @@ const SideNav = ({ isShowSideNav, hideSideNav }) => {
             </StyledButton>
 
             <StyledButton startIcon={<ReceiptLongIcon />} fullWidth size="large" onClick={hideSideNav}>
-              <Link href={PATH_HISTORY}>Order history</Link>
+              <Link to="/cart">Order history</Link>
             </StyledButton>
 
             <StyledButton startIcon={<LoginIcon />} fullWidth size="large" onClick={hideSideNav}>
-              <Link href={PATH_USER_SIGNIN}>Sign up or log in</Link>
+              <Link to="/login">Sign up or log in</Link>
             </StyledButton>
           </div>
 

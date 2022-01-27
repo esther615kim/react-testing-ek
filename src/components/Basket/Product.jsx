@@ -4,7 +4,7 @@ import "../styled.css";
 import { StyledBox, StyledStack, StyledPaper } from "./basket.styled";
 import { IconButton, Typography } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import FavButton from "./FavButton";
+import FavButton from "../FavCard/FavButton";
 import {
   addToFavList,
   removeFromFavList,
@@ -18,15 +18,16 @@ import { useDispatch } from "react-redux";
 
 const ProductList = React.memo(({ data })=> {
   const dispatch = useDispatch();
-
   const [liked, setLiked] = useState(false);
 
-  const handleAddtoFavList = useCallback((product) => {
-    setLiked((prev) => !prev);
+
+  const handleAddtoFavList = (product) => {
+    // setLiked((prev) => !prev);
     // product의 liked 속성 추기 => true로 만들기 (혹은 토글)
-    dispatch(addToCart(addToFavList)); // reducer
-    console.log(product);
-  },[]);
+    dispatch(addToFavList(product));  // reducer
+    console.log("좋아요",product);
+  };
+
 
   const handleClicktoCart = (addedProduct) => {
     

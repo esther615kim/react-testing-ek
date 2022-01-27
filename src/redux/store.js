@@ -9,7 +9,7 @@ export const store= configureStore({
     reducer:{
         products:productReducer,
         cart:cartReducer,
-        favList:favListReducer,
+        favs:favListReducer,
         [productApi.reducerPath]:productApi.reducer,
     },
     middleware:(getDefaultMiddleware) =>(

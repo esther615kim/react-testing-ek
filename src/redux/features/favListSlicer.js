@@ -1,16 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  // check with 효형's restuarant card info
-  favList: [
+  favs: [
     {
       id: 17,
-      shopName: "Bob's burgers",
-      shopDescription: 'comfort food',
-      liked:false
+      cateogry: "spring coat",
+      image:"https://img.hollisterco.com/is/image/anf/KIC_332-2017-1511-902_prod1?policy=product-large",
+      description:"trendy jacket",
+      price:32.15
     },
   ],
-
+  favTotal:0
 };
 
 const FavListSlicer = createSlice({
@@ -19,22 +19,25 @@ const FavListSlicer = createSlice({
   reducers: {
     // addToFavList
     addToFavList(state, action) {
-      const selectedShop = {
-        ...action.payload,
-      };
-      // selectedShop에 liked 추가하기 (default = false)
-      const itemIndex = state.favList.findIndex((item) => item.id === action.payload.id);
+      const selectedItem = { ...action.payload, qty: 1 };
+
+      const itemIndex = state.favs.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      
       if (itemIndex < 0) {
 
-        state.favList.push(selectedShop);
+        state.favs.push(selectedItem);
+        // console.log("넣음",state.favList)
       }
-      console.log('updated favList', state.favList);
+      state.favTotal++;
+      console.log(state.favs);
     },
     // removeFromFavList
-    removeFromFavList(state, action) {
-      const updatedFavList = state.favList.filter((item) => item.id !== action.payload.id);
-      state.favList = updatedFavList;
-    },
+    // removeFromFavList(state, action) {
+    //   const updatedFavList = state.favList.filter((item) => item.id !== action.payload.id);
+    //   state.favList = updatedFavList;
+    // },
   },
 });
 

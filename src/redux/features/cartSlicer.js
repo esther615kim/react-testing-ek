@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import {toast} from "react-toastify";
-
 const initialState = {
   cartItems: [
     {
@@ -23,6 +22,7 @@ const cartSlice = createSlice({
     // add item to cart
     addToCart(state, action) {
       const selectedItem = { ...action.payload, qty: 1 };
+      console.log(selectedItem);
       const itemIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
       );

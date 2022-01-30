@@ -17,25 +17,25 @@ function Navbar() {
                     <h4>Testing World</h4>
                     <Stack className="logo" direction="row" spacing={2}>
                         
-                    <Link to="/cart">
+                    <StyledLink to="/cart">
                     <Chip icon={<TagFaces/>} label="counter" variant="filled"></Chip>
-                    </Link>
+                    </StyledLink>
 
-                    <Link  to={'/login'}>
+                    <StyledLink to={'/login'}>
                     <Chip icon={<Face />} label="login" variant="filled"></Chip>
-                    </Link>
+                    </StyledLink>
 
                     <StyledLink to="/favs">
                     <Chip  size="medium" icon={<FavoriteBorderIcon/>} label="Favourites" variant="filled"></Chip>
                     </StyledLink>
 
-                    <Link  to="/mytrip">
+                    <StyledLink  style={{ textDecoration: 'none' }} to="/mytrip">
                     <Chip color="primary" icon={<LocalAirport/>}label="my-trip" variant="filled"></Chip>
-                    </Link>
+                    </StyledLink>
 
-                    <Link to="/cart">
+                    <StyledLink style={{ textDecoration: 'none' }} to="/cart">
                     <Chip  color="primary" icon={<ShoppingCart/>} label="cart" variant="filled"></Chip>
-                    </Link>
+                    </StyledLink>
                     </Stack>
                 </Toolbar>
             </AppBar>

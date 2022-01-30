@@ -1,37 +1,39 @@
-import React, { useState, useCallback } from "react";
+import React, { useState,useEffect} from "react";
 import "../styled.css";
 
 import { StyledBox, StyledStack, StyledPaper } from "./basket.styled";
 import { IconButton, Typography } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import FavButton from "../FavCard/FavButton";
 import {
-  addToFavList,
-  removeFromFavList,
+  addToFavList
 } from "../../redux/features/favListSlicer";
-
-// 컴포넌트명에 Icon이 들어 있는게 better readability
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+// import {product_data} from './productData';
 import { addToCart } from "../../redux/features/cartSlicer";
-
 import { useDispatch } from "react-redux";
+
 
 
 const ProductList = React.memo(({ data })=> {
   const dispatch = useDispatch();
-  const [liked, setLiked] = useState(false);
-
+  const [latestData,setlaTestData] = useState(data);
+  const [favourite, setFavoruite] = useState(false);
+  useEffect(()=>{
+    setlaTestData(prev=>data)
+  },[data])
 
   const handleAddtoFavList = (product) => {
-    // setLiked((prev) => !prev);
-    // product의 liked 속성 추기 => true로 만들기 (혹은 토글)
+    setFavoruite((prev) => !prev);
     dispatch(addToFavList(product));  // reducer
-    console.log("좋아요",product);
+    // }else{
+      
+    // }
   };
 
 
   const handleClicktoCart = (addedProduct) => {
-    
-    dispatch(addToCart(addedProduct)); // reducer
+    dispatch(addToCart(addedProduct)); 
   };
 
   return (
@@ -40,7 +42,8 @@ const ProductList = React.memo(({ data })=> {
       <p>Featured Collection in 2022 Spring/Summer</p>
       <div className="product-list">
         {/* card */}
-        {data.map((product) => (
+        {/* {product_data.map((product) => ( */}
+         {latestData.map((product) => (
           <StyledPaper key={product.id}>
             <img
               className="product-img"
@@ -60,10 +63,8 @@ const ProductList = React.memo(({ data })=> {
               </IconButton>
 
               <IconButton
-                color="warning" size="large"onClick={() =>  handleAddtoFavList(product)} >
-                <FavButton
-                  liked={liked} product={product}
-                />
+                color="warning" size="large" onClick={() => handleAddtoFavList(product)} >
+                  {favourite?<FavoriteIcon />:< FavoriteBorderIcon />}
               </IconButton>
             </StyledStack>
           </StyledPaper>

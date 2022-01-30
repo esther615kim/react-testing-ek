@@ -1,57 +1,58 @@
-import { Typography, CardMedia, CardContent, Stack } from '@mui/material';
-import React,{useState}from 'react';
+import { Typography, Stack, IconButton } from "@mui/material";
+import React, { useState } from "react";
+import { StyledBox, StyledStack, StyledPaper } from "../Basket/basket.styled";
 import { useSelector, useDispatch } from "react-redux";
-import { StyledPaper, StyledChip } from './favlist.styled';
-
-// dummy data => 작업1. local storage 저장 &redux 세팅 예정
-const FAV_LIST = [
-  {
-    shop_id: 34,
-    shop_name: 'PasTastic - Chippenham Road',
-    image_url: 'https://rs-menus-api.roocdn.com/images/46bbf3fc-1853-4c2b-a505-62edc5d4dcb0/image.jpeg?width=343',
-    description: 'Italian·Vegetarian·Pasta',
-    delivery_distance: '25-30 min',
-  },
-  {
-    shop_id: 14,
-    shop_name: 'Burger King - Kentish Town',
-    image_url:
-      'https://rs-menus-api.roocdn.com/images/e11e2ed3-3450-48b6-8f7c-a02ee512f67f/image.jpeg?width=531&height=299&auto=webp&format=jpg&fit=crop',
-    description: 'American·Burgers·Vegan Friendly',
-    delivery_distance: '10-20 min',
-  },
-];
+import { FavoriteIcon } from "@mui/icons-material/Favorite";
+import { FavoriteBorderIcon } from "@mui/icons-material/FavoriteBorder";
 
 const FavCard = () => {
-
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const favourites = useSelector((state) => state.favs);
-  console.log("즐겨찾기",favourites)
-
+  console.log("즐겨찾기", favourites);
   return (
-    <Stack pt={2} direction="row" spacing={2}>
-       {/* {!favourites.favList ? (
+    <Stack sx={{ maxWidth: "920px" }} pt={2} direction="row" spacing={2}>
+      {/* {!favourites.favList ? (
           <Typography pb={2} gutterBottom variant="subtitle1">
             Your Favlist is empty
           </Typography>
         ) : ( */}
-          <>
-          {favourites.favs.map((item) => (
-            <StyledPaper key={item.id}sx={{width:300, height:240}} key={item.shop_id}>
-              <CardMedia component="img" height="194" image={item.image} alt="shopImage" />
-              <CardContent>
-                <Typography paragraph>{item.title}</Typography>
-                <Typography variant="subtitle2" color="text.secondary">
-                  {item.description}
-                </Typography>
-              </CardContent>
-            </StyledPaper>
-          ))
-          }
-                    </>
-        {/* ) */}
-        {/* } */}
-
+      <>
+        <StyledBox>
+          <h2>My favourites</h2>
+          <p>My favourites added</p>
+          <div className="product-list">
+            {/* card */}
+            {favourites.favList.map((product) => (
+              <StyledPaper key={product.id}>
+                <img
+                  className="product-img"
+                  src={product.image}
+                  alt={product.title}
+                />
+                <div>
+                  <Typography variant="button">{product.category}</Typography>
+                  <Typography
+                    className="product-description"
+                    variant="subtitle2"
+                  >
+                    {product.title}
+                  </Typography>
+                  <Typography variant="subtitle1">£ {product.price}</Typography>
+                </div>
+                <StyledStack spacing={0.5}>
+                  <IconButton color="warning" size="large">
+                    {/* {product.isLiked ? (
+                      <FavoriteIcon />
+                    ) : (
+                      <FavoriteBorderIcon />
+                    )} */}
+                  </IconButton>
+                </StyledStack>
+              </StyledPaper>
+            ))}
+          </div>
+        </StyledBox>
+      </>
     </Stack>
   );
 };

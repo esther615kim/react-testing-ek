@@ -43,7 +43,6 @@ const StyledButton = styled(Button)`
 
 export const StyledLink = styled(Link)`
 text-decoration:none,
-
 `
 
 export { StyledButton, StyledSideNavContainer, StyledSideNavHeader, StyledSideNavMain };

@@ -14,7 +14,7 @@
 |  Prep | Increment Counter  | update-completed |  
 |  WK1 | Order page | error fixed & update-completed |   
 |  WK2 | Summary page | update-completed|  
-|  WK3 | Order-complete page |  | 
+|  WK3 | Order-complete page | update-completed | 
 
 | WK | Content | Status | 
 | :--: | :-----------------: | :------------: |
